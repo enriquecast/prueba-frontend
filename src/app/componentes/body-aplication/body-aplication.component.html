@@ -1,0 +1,46 @@
+<div class="col-12">
+    <div class="row " style="margin-top:30px; margin-left: 1rem">
+        <div class="col-2 ">
+            <app-aside-filter></app-aside-filter>
+        </div>
+        <div class="col-9 ">
+            <div class="row" *ngIf="objectProducts.length > 0">
+                <div class="col-sm-12 col-md-5 col-lg-3 margin-card border-card card " *ngFor="let droneall of objectProducts">
+                    <img class="card-img-top img-fluid" [attr.src]="droneall.img">
+                    <div class="card-body">
+                        <h4 class="card-title">{{droneall.name}}</h4>
+                        <p class="card-text">{{droneall.description}}</p>
+                        <p class="card-text">{{droneall.price}}</p>
+                        <button type="button" class="btn btn-block btn-default" id="btndetalle" data-toggle="modal" data-target="#detalle">Detalle del producto</button> 
+                        <button type="button" href="#" class="btn btn-info btn-out-line-primary btn-block">Comprar</button>
+                        <div class="modal fade" id="detalle" >
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                            <h5 class="modal-title">{{droneall.name}}</h5>
+                                            <button type="button" class="close" data-dismiss="modal" arial-label="close">                                               
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>                                        
+                                    </div>
+
+                                          <div class="modal-body">
+                                            <img class="card-img-top img-fluid" [attr.src]="droneall.img">  
+                                            <p>{{droneall.description}}</p>
+                                          </div>
+
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary">Comprar</button>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                         </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
